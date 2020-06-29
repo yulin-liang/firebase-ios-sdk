@@ -268,7 +268,19 @@ NS_ASSUME_NONNULL_BEGIN
   }
 }
 
+- (BOOL)isPasteBoardRetrievalEnabled {
+  id retrievalEnabledValue =
+      [[NSBundle mainBundle] infoDictionary][@"FirebaseDeepLinkPasteBoardRetrievalEnabled"];
+  if ([retrievalEnabledValue respondsToSelector:@selector(boolValue)]) {
+    return [retrievalEnabledValue boolValue];
+  }
+  return YES;
+}
+
 - (nullable NSURL *)uniqueMatchLinkToCheck {
+  if (![self isPasteBoardRetrievalEnabled]) {
+    return nil;
+  }
   _clipboardContentAtMatchProcessStart = nil;
   NSString *pasteboardContents = [self retrievePasteboardContents];
   NSInteger linkStringMinimumLength =
