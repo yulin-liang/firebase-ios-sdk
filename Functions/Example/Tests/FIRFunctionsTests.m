@@ -17,6 +17,12 @@
 #import "Functions/FirebaseFunctions/FIRFunctions+Internal.h"
 #import "Functions/FirebaseFunctions/Public/FirebaseFunctions/FIRFunctions.h"
 
+@interface FIRFunctions (Test)
+
+@property(nonatomic, readonly) NSString *emulatorOrigin;
+
+@end
+
 @interface FIRFunctionsTests : XCTestCase
 @end
 
@@ -37,6 +43,15 @@
                                                           messaging:nil];
   NSString *url = [functions URLWithName:@"my-endpoint"];
   XCTAssertEqualObjects(@"https://my-region-my-project.cloudfunctions.net/my-endpoint", url);
+}
+
+- (void)testSetEmulatorSettings {
+  FIRFunctions *functions = [[FIRFunctions alloc] initWithProjectID:@"my-project"
+                                                             region:@"my-region"
+                                                               auth:nil
+                                                          messaging:nil];
+  [functions useEmulatorWithHost:@"localhost" port:1000];
+  XCTAssertEqualObjects(@"localhost:1000", functions.emulatorOrigin);
 }
 
 @end
