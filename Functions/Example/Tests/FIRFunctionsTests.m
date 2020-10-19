@@ -17,12 +17,6 @@
 #import "Functions/FirebaseFunctions/FIRFunctions+Internal.h"
 #import "Functions/FirebaseFunctions/Public/FirebaseFunctions/FIRFunctions.h"
 
-@interface FIRFunctions (Test)
-
-@property(nonatomic, readonly) NSString *emulatorOrigin;
-
-@end
-
 @interface FIRFunctionsTests : XCTestCase
 @end
 
