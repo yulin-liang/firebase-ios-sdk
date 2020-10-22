@@ -1,6 +1,5 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
-
 // Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 // This Package.swift is a Work in Progress. We intend to keep it functional
 // on the master branch, but it is rapidly evolving and may have occasional
 // breakages. Please report any issues at
 // https://github.com/firebase/firebase-ios-sdk/issues/new/choose.
-
 import PackageDescription
 
 let firebaseVersion = "7.0.0"
@@ -111,8 +108,8 @@ let package = Package(
     ),
     .package(
       name: "gRPC",
-      url: "https://github.com/yulin-liang/grpc.git",
-      .revision("9a7a2fab18823c107ca61d187047981dc8cd2314")
+      url: "https://github.com/firebase/grpc-SwiftPM.git",
+      .revision("5bb2669317ae2183f4cb00c675423af1924f0b46")
     ),
     .package(
       name: "OCMock",
@@ -835,7 +832,6 @@ let package = Package(
     ),
 
     // TODO: ISA_Swizzler requires building without ARC.
-
     .target(
       name: "GoogleUtilities_MethodSwizzler",
       dependencies: ["GoogleUtilities_Logger"],
