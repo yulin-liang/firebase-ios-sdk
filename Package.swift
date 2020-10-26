@@ -111,8 +111,8 @@ let package = Package(
     ),
     .package(
       name: "gRPC",
-      url: "https://github.com/firebase/grpc-SwiftPM.git",
-      .revision("5bb2669317ae2183f4cb00c675423af1924f0b46")
+      url: "https://github.com/yulin-liang/grpc.git",
+      .revision("f5acbe3ccf5b6f7267bfde08c14b38fb5d65298b")
     ),
     .package(
       name: "OCMock",
