@@ -109,7 +109,7 @@ let package = Package(
     .package(
       name: "gRPC",
       url: "https://github.com/yulin-liang/grpc.git",
-      .revision("93176c90aca8fd183c051ef7fbd11f244075443a")
+      .revision("da6e6c2de9c8cdacd429b1c3b7b150ccb5d7c384")
     ),
     .package(
       name: "OCMock",
